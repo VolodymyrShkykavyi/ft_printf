@@ -19,8 +19,8 @@ size_t	ft_putnwstr(wchar_t *str, size_t len)
 	byte_output = 0;
 	while (len-- > 0)
 	{
-		ft_putwchar(*str++);
 		byte_output += ft_utf8_bytelen(*str);
+		ft_putwchar(*str++);
 	}
-	return (tmp);
+	return (byte_output);
 }

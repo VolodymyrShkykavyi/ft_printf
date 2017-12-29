@@ -19,5 +19,5 @@ size_t	ft_wstrsize(wchar_t *str)
 	size = 0;
 	while (*str)
 		size += ft_utf8_bytelen(*str++);
-	return (size);f
+	return (size);
 }
