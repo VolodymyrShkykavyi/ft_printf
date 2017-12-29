@@ -15,7 +15,7 @@
 
 void	format_c(t_specinfo *info, int *len, va_list *args)
 {
-	if (info->format == 'c' && !(info->mod_l))
+	if (info->format == 'c' || info->format == 'C')
 		format_c_putchar(info, len, (unsigned char)va_arg(*args, int));
 	else
 		format_c_putwchar(info, len, va_arg(*args, wchar_t));
