@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include "libft.h"
+#include "ft_printf.h"
 
 static int	ft_numlen(intmax_t number, int base)
 {
