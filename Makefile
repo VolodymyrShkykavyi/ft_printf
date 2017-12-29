@@ -24,6 +24,7 @@ $(NAME): $(LIBFT_OFILES) $(PRINTF_OFILES)
 	@gcc -o $@ -c $< $(FLAGS) $(INCLUDES)
 clean:
 	@rm -f $(LIBFT_OFILES) $(PRINTF_OFILES)
+	rm -rf *.o libft\/*\.o
 	@echo "\033[0;32mCLEANED\033[0m "
 fclean: clean
 	rm -f $(NAME)
