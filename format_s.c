@@ -56,7 +56,7 @@ void	format_s_putwstr(t_specinfo *info, int *len, wchar_t *str)
 	int 	str_blen;
 	int 	space_len;
 
-	str_blen = ft_wstrsize(*str);
+	str_blen = ft_wstrsize(str);
 	if (str_blen > info->precision && info->precision != -1)
 		str_blen = format_s_wstr_maxbytes(str, info->precision);
 	space_len = (str_blen < info->min_width) ? info->min_width - str_blen : 0;
