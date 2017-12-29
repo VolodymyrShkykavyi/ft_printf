@@ -43,7 +43,6 @@ int					ft_chrin_str(const char *s, int c);
 void				print_manager(t_specinfo *info, int *len,
 									va_list *args);
 void				ft_printf_getcolor(char **str);
-int					ft_atoi(const char *str);
 
 void				format_s(t_specinfo *info, int *len, va_list *args);
 void				format_s_wchar(t_specinfo *info, int *len, va_list *args);
@@ -53,5 +52,7 @@ void				format_c_putchar(t_specinfo *info, int *len,
 void				format_c(t_specinfo *info, int *len, va_list *args);
 void				format_c_putwchar(t_specinfo *info, int *len, wchar_t wc);
 void				format_s_putstr(t_specinfo *info, int *len, char *str);
+
+void				format_d_i(t_specinfo *info, int *len, va_list *args);
 
 #endif

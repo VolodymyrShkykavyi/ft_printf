@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <wchar.h>
+# include <stdint.h>
 
 typedef struct		s_list
 {
@@ -97,5 +98,7 @@ size_t				ft_putwstr(wchar_t *wstr);
 short				ft_utf8_bytelen(wchar_t wc);
 size_t				ft_putnwstr(wchar_t *str, size_t len);
 size_t				ft_wstrsize(wchar_t *str);
+
+char				*ft_itoa_base(intmax_t num, int base);
 
 #endif

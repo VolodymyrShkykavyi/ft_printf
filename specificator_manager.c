@@ -27,28 +27,35 @@ static void	ft_specinfo_init(t_specinfo *info)
 	info->mod_z = 0;
 }
 
-static void	parse_width_and_precision(t_specinfo *info, char *str, int len)
+static void	parse_width_and_precision(t_specinfo *info, char *str, int len,
+										 va_list *args)
 {
 	int	tmp;
 
 	tmp = len;
 	while (--tmp >= 0)
-		if (*(str + tmp) == '.')
+		if (ft_isdigit(*(str + tmp)) || *(str + tmp) == '*')
 		{
-			info->precision = ft_atoi((str + tmp + 1));
-			break ;
-		}
-	tmp = len;
-	while (--tmp >= 0)
-		if (ft_isdigit(*(str + tmp)))
-		{
-			while (tmp >= 0 && ft_isdigit(*(str + tmp)))
+			if (*(str + tmp) == '*')
+			{
+				info->min_width = va_arg(*args, int);
+				break ;
+			}
+			while (tmp >= 0 && (ft_isdigit(*(str + tmp))))
 				tmp--;
 			if (*(str + tmp) != '.')
 			{
 				info->min_width = ft_atoi(str + tmp + 1);
 				break ;
 			}
+		}
+	tmp = len;
+	while (--tmp >= 0)
+		if (*(str + tmp) == '.')
+		{
+			info->precision = (*(str + tmp + 1) == '*') ?
+							  va_arg(*args, int) : ft_atoi((str + tmp + 1));
+			break ;
 		}
 }
 
@@ -91,7 +98,7 @@ static void	get_specificator_format(char *str, int *pos, t_specinfo *info)
 			break ;
 		}
 		if (!ft_isdigit(c) && c != '.' && !(ft_chrin_str(FLAG, c)) &&
-				!(ft_chrin_str(MOD, c)))
+				!(ft_chrin_str(MOD, c)) && c != '*')
 			break ;
 		(*pos)++;
 	}
