@@ -49,12 +49,11 @@ static void	parse_width_and_precision(t_specinfo *info, char *str, int len,
 				break ;
 			}
 		}
-	tmp = len;
-	while (--tmp >= 0)
-		if (*(str + tmp) == '.')
+	while (--len >= 0)
+		if (*(str + len) == '.')
 		{
-			info->precision = (*(str + tmp + 1) == '*') ?
-							  va_arg(*args, int) : ft_atoi((str + tmp + 1));
+			info->precision = (*(str + len + 1) == '*') ?
+							  va_arg(*args, int) : ft_atoi((str + len + 1));
 			break ;
 		}
 }
