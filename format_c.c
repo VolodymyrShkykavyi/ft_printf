@@ -44,7 +44,7 @@ void	format_c_putwchar(t_specinfo *info, int *len, wchar_t wc)
 	int		wc_len;
 	int 	space_len;
 
-	wc_len = ft_utf8_bytelen(wchar_t wc);
+	wc_len = ft_utf8_bytelen(wc);
 	space_len = (info->min_width > wc_len) ? (info->min_width - wc_len) : 0;
 	if (info->zero_minus == '-')
 	{
