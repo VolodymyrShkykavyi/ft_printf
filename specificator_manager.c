@@ -112,7 +112,7 @@ void		specificator_manager(char **format, int *len, va_list *args)
 	ft_specinfo_init(&info);
 	pos = 1;
 	get_specificator_format(*format, &pos, &info);
-	parse_width_and_precision(&info, *format + 1, pos - 1);
+	parse_width_and_precision(&info, *format + 1, pos - 1, args);
 	parse_mods_and_flags(&info, *format + 1, pos - 1);
 	if (!(info.format))
 	{
