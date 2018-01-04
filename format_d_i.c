@@ -15,7 +15,9 @@
 
 static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 {
-	if (info->mod_h > 1)
+	if (info->format == 'D')
+		*num == (long)(*num);
+	else if (info->mod_h > 1)
 		*num = (char)(*num);
 	else if (info->mod_h == 1)
 		*num = (short)(*num);
