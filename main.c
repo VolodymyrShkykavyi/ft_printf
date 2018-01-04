@@ -25,8 +25,10 @@ int	main()
 	unsigned int res;
 
 	//ft_putwstr(wc);
-	printf("%+3.4d", 12345);
-
+	int i = 0;
+	printf("aa");
+	printf("1234\n%n", &i);
+	printf("i = %i\n", i);
 	//write(1, &happy, 2);
 	/*res = 0xc2;
 	write(1, &(res), 1);

@@ -12,7 +12,7 @@ LIBFT_OFILES = $(addprefix libft/, ft_strstr.o ft_strmap.o ft_lstadd.o ft_strdel
 			ft_putnchar.o ft_putnstr.o ft_atoi.o ft_putwchar.o ft_putwstr.o ft_utf8_bytelen.o \
 			ft_putnwstr.o ft_wstrsize.o ft_itoa_base.o)
 PRINTF_OFILES = format_c.o format_p.o format_s.o ft_chrin_str.o ft_printf.o print_manager.o \
-			specificator_manager.o format_d_i.o
+			specificator_manager.o format_d_i.o format_n.o
 INCLUDES = -I ./includes
 
 all: $(NAME)

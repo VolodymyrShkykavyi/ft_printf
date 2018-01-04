@@ -54,5 +54,6 @@ void				format_c_putwchar(t_specinfo *info, int *len, wchar_t wc);
 void				format_s_putstr(t_specinfo *info, int *len, char *str);
 
 void				format_d_i(t_specinfo *info, int *len, va_list *args);
+void				format_n(t_specinfo *info, int *len, va_list *args);
 
 #endif
