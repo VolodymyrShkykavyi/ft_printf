@@ -25,6 +25,7 @@ static void	ft_specinfo_init(t_specinfo *info)
 	info->mod_j = 0;
 	info->mod_l = 0;
 	info->mod_z = 0;
+	info->mod_L = 0;
 }
 
 static void	parse_width_and_precision(t_specinfo *info, char *str, int len,
@@ -75,6 +76,8 @@ static void	parse_mods_and_flags(t_specinfo *info, char *str, int len)
 			info->mod_j += 1;
 		else if (*(str + len) == 'z')
 			info->mod_z += 1;
+		else if (*(str + len) == 'L')
+			info->mod_L += 1;
 		else if (*(str + len) == '-')
 			info->zero_minus = '-';
 		else if (*(str + len) == '0' && info->zero_minus != '-' &&

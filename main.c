@@ -26,9 +26,8 @@ int	main()
 
 	//ft_putwstr(wc);
 	int i = 0;
-	printf("aa");
-	printf("1234\n%n", &i);
-	printf("i = %i\n", i);
+
+	printf("aa%#10.5o__\n", 00042);
 	//write(1, &happy, 2);
 	/*res = 0xc2;
 	write(1, &(res), 1);

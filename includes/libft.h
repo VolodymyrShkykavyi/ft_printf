@@ -100,5 +100,6 @@ size_t				ft_putnwstr(wchar_t *str, size_t len);
 size_t				ft_wstrsize(wchar_t *str);
 
 char				*ft_itoa_base(intmax_t num, int base);
+char				*ft_uitoa_base(uintmax_t num, short base);
 
 #endif

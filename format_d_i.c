@@ -28,7 +28,7 @@ static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 	else if (info->mod_j)
 		*num = (intmax_t)(*num);
 	else if (info->mod_z)
-		*num = (size_t)(*num);
+		*num = (ssize_t)(*num);
 	else
 		*num = (int)(*num);
 }

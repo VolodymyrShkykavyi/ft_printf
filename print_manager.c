@@ -22,6 +22,8 @@ void	print_manager(t_specinfo *info, int *len, va_list *args)
 		format_d_i(info, len, args);
 	else if (info->format == 'n')
 		format_n(info, len, args);
+	else if (info->format == 'o' || info->format == 'O')
+		format_o(info, len, args);
 	else
 		va_arg(*args, int);
 }

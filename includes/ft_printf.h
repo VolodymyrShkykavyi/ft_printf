@@ -15,8 +15,9 @@
 
 # define FLAG "#0+- "
 # define FORMAT "sSpdDioOuUxXcCeEfFgGaAn"
-# define MOD "hljz"
+# define MOD "hljzL"
 # define HEX_SYMBOLS "0123456789ABCDEF"
+
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdint.h>
@@ -34,12 +35,12 @@ typedef struct		s_specinfo
 	int		mod_l;
 	int		mod_j;
 	int		mod_z;
+	int		mod_L;
 }					t_specinfo;
 
 int					ft_printf(const char *format, ...);
 void				specificator_manager(char **format, int *len,
 									va_list *args);
-int					ft_chrin_str(const char *s, int c);
 void				print_manager(t_specinfo *info, int *len,
 									va_list *args);
 void				ft_printf_getcolor(char **str);
@@ -55,5 +56,10 @@ void				format_s_putstr(t_specinfo *info, int *len, char *str);
 
 void				format_d_i(t_specinfo *info, int *len, va_list *args);
 void				format_n(t_specinfo *info, int *len, va_list *args);
+void				format_o(t_specinfo *info, int *len, va_list *args);
+
+
+void				ft_printf_cast_unum(t_specinfo *info, void *num, va_list *args);
+int					ft_chrin_str(const char *s, int c);
 
 #endif
