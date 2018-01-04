@@ -35,8 +35,6 @@ static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 
 static void	format_d_i_printsign(t_specinfo *info, char *str)
 {
-	if (info->plus_space && zero_len)
-		zero_len--;
 	if (*str != '-' && info->plus_space == '+')
 		ft_putchar('+');
 	else if (*str != '-' && info->plus_space == ' ')
@@ -50,6 +48,8 @@ static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
 	int		zero_len;
 
 	zero_len = num_len - ft_strlen(str);
+	if (info->plus_space && zero_len)
+		zero_len--;
 	if (info->precision != -1)
 		format_d_i_printsign(info, str);
 	ft_putnchar('0', (size_t) zero_len);
