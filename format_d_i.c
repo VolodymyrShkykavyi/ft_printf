@@ -48,11 +48,13 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 		str_len++;
 	space_len =  (str_len < info->min_width) ? info->min_width - str_len : 0;
 	*len += space_len + str_len;
-	if (info->zero_minus != '-')
-		ft_putnchar((info->zero_minus == '0') ? '0' : ' ', space_len);
 	if (num >= 0 && info->plus_space)
 		ft_putchar('+');
-	ft_putstr(str);
+	else if (num < 0)
+		ft_putchar('-');
+	if (info->zero_minus != '-')
+		ft_putnchar((info->zero_minus == '0') ? '0' : ' ', space_len);
+	ft_putstr((num < 0) ? str + 1 : str);
 	if (info->zero_minus == '-')
 		ft_putnchar(' ', (size_t)space_len);
 	free(str);
