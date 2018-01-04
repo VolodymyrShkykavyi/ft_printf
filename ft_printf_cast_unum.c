@@ -15,9 +15,9 @@
 void	ft_printf_cast_unum(t_specinfo *info, uintmax_t *num, va_list *args)
 {
 	if (info->mod_h > 1)
-		*num = va_arg(*args, unsigned char);
+		*num = (unsigned char)va_arg(*args, uintmax_t);
 	else if (info->mod_h == 1)
-		*num = va_arg(*args, unsigned short);
+		*num = (unsigned short)va_arg(*args, uintmax_t);
 	else if (info->mod_l == 1)
 		*num = va_arg(*args, unsigned long);
 	else if (info->mod_l > 1)
