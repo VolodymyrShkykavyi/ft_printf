@@ -38,14 +38,14 @@ static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
 	int		zero_len;
 
 	zero_len = num_len - ft_strlen(str);
-	if (num >= 0 && info->plus_space == '+')
+	if (*str != '-' && info->plus_space == '+')
 		ft_putchar('+');
-	else if (num >= 0 && info->plus_space == ' ')
+	else if (*str != '-' && info->plus_space == ' ')
 		ft_putchar(' ');
-	else if (num < 0)
+	else if (*str == '-')
 		ft_putchar('-');
 	ft_putnchar('0', (size_t)zero_len);
-	ft_putstr((num < 0) ? str + 1 : str);
+	ft_putstr((*str == '-') ? str + 1 : str);
 }
 
 void	format_d_i(t_specinfo *info, int *len, va_list *args)
