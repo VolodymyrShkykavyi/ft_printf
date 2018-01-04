@@ -33,11 +33,8 @@ static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 		*num = (int)(*num);
 }
 
-static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
+static void	format_d_i_printsign(t_specinfo *info, char *str)
 {
-	int		zero_len;
-
-	zero_len = num_len - ft_strlen(str);
 	if (info->plus_space && zero_len)
 		zero_len--;
 	if (*str != '-' && info->plus_space == '+')
@@ -46,7 +43,16 @@ static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
 		ft_putchar(' ');
 	else if (*str == '-')
 		ft_putchar('-');
-	ft_putnchar('0', (size_t)zero_len);
+}
+
+static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
+{
+	int		zero_len;
+
+	zero_len = num_len - ft_strlen(str);
+	if (info->precision != -1)
+		format_d_i_printsign(info, str);
+	ft_putnchar('0', (size_t) zero_len);
 	ft_putstr((*str == '-') ? str + 1 : str);
 }
 
@@ -66,6 +72,8 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 		str_len++;
 	space_len =  (str_len < info->min_width) ? info->min_width - str_len : 0;
 	*len += space_len + str_len;
+	if (info->precision == -1)
+		format_d_i_printsign(info, str);
 	if (info->zero_minus != '-')
 		ft_putnchar((info->zero_minus == '0' && info->precision == -1)
 					? '0' : ' ', space_len);
