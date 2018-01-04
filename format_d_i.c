@@ -48,8 +48,10 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 		str_len++;
 	space_len =  (str_len < info->min_width) ? info->min_width - str_len : 0;
 	*len += space_len + str_len;
-	if (num >= 0 && info->plus_space)
+	if (num >= 0 && info->plus_space == '+')
 		ft_putchar('+');
+	else if (num >= 0 && info->plus_space == ' ')
+		ft_putchar(' ');
 	else if (num < 0)
 		ft_putchar('-');
 	if (info->zero_minus != '-')
