@@ -38,6 +38,8 @@ static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
 	int		zero_len;
 
 	zero_len = num_len - ft_strlen(str);
+	if (info->plus_space && zero_len)
+		zero_len--;
 	if (*str != '-' && info->plus_space == '+')
 		ft_putchar('+');
 	else if (*str != '-' && info->plus_space == ' ')

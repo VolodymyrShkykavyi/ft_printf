@@ -24,8 +24,8 @@ int	main()
 	wchar_t *wc = L"_ঋ_";
 	unsigned int res;
 
-	ft_putwstr(wc);
-	printf("\n");
+	//ft_putwstr(wc);
+	printf("%+3.4d", 12345);
 
 	//write(1, &happy, 2);
 	/*res = 0xc2;
@@ -35,7 +35,7 @@ int	main()
 */
 	//res = (value) >> 16;
 	//write(1, (char *)(value), 1);
-	printf("res: %i\nstrlen: %i\n", printf("%+-08.5S", wc), strlen(wc));
+	//printf("res:%5.*s\n", 2, "_str_", 10);
 //	printf("res: %i\nprintf: %X\n", ft_putwchar(wc), wc);
 	/*write(1, value, 2);
 	printf("\n");
