@@ -46,7 +46,7 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 	str_len = ft_strlen(str);
 	if (num >= 0 && info->plus_space)
 		str_len++;
-	space_len =  (str_len < info->min_width) ? info->min_width - space_len : 0;
+	space_len =  (str_len < info->min_width) ? info->min_width - str_len : 0;
 	*len += space_len + str_len;
 	if (info->zero_minus != '-')
 		ft_putnchar((info->zero_minus == '0') ? '0' : ' ', space_len);
