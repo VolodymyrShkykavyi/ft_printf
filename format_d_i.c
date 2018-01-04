@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+#include <stdlib.h>
 
 static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 {
@@ -52,4 +53,5 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 	ft_putstr(str);
 	if (info->zero_minus == '-')
 		ft_putnchar(' ', (size_t)space_len);
+	free(str);
 }

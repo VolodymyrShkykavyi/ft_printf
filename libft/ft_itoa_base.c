@@ -31,7 +31,6 @@ static int	ft_numlen(intmax_t number, int base)
 	return (len);
 }
 
-#include <stdio.h>
 char		*ft_itoa_base(intmax_t num, int base)
 {
 	char	*res;
