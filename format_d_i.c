@@ -51,5 +51,5 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 		ft_putchar('+');
 	ft_putstr(str);
 	if (info->zero_minus == '-')
-		ft_putnchar(' ', size_t(space_len));
+		ft_putnchar(' ', (size_t)space_len);
 }
