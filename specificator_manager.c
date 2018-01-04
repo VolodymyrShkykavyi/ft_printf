@@ -39,6 +39,11 @@ static void	parse_width_and_precision(t_specinfo *info, char *str, int len,
 			if (*(str + tmp) == '*')
 			{
 				info->min_width = va_arg(*args, int);
+				if (info->min_width < 0)
+				{
+					info->zero_minus = '-';
+					info->min_width *= -1;
+				}
 				break ;
 			}
 			while (tmp >= 0 && (ft_isdigit(*(str + tmp))))

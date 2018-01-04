@@ -18,6 +18,8 @@ void	print_manager(t_specinfo *info, int *len, va_list *args)
 		format_s(info, len, args);
 	else if (info->format == 'c' || info->format == 'C')
 		format_c(info, len, args);
+	else if (info->format == 'd' || info->format == 'i')
+		format_d_i(info, len, args);
 	else
 		va_arg(*args, int);
 }

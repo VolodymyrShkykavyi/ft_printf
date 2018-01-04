@@ -19,6 +19,8 @@ static int	ft_numlen(intmax_t number, int base)
 	int		len;
 
 	len = (number < 0 && base == 10) ? 1 : 0;
+	if (number == 0)
+		return (1);
 	if (number < 0)
 		number *= -1;
 	while (number)
@@ -29,6 +31,7 @@ static int	ft_numlen(intmax_t number, int base)
 	return (len);
 }
 
+#include <stdio.h>
 char		*ft_itoa_base(intmax_t num, int base)
 {
 	char	*res;
@@ -40,11 +43,18 @@ char		*ft_itoa_base(intmax_t num, int base)
 	res[len--] = '\0';
 	if (num < 0 && base == 10)
 		res[0] = '-';
-	num = (num < 0) ? -num : num;
+	if (num < 0)
+	{
+		res[len--] = HEX_SYMBOLS[-(num % base)];
+		num /= base;
+		num *= -1;
+	}
 	while (num)
 	{
 		res[len--] = HEX_SYMBOLS[num % base];
 		num /= base;
 	}
+	if (len >= 0 && res[0] != '-')
+		res[0] = '0';
 	return (res);
 }
