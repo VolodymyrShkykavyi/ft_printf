@@ -12,7 +12,7 @@
 
 #include "includes/ft_printf.h"
 
-void	ft_printf_cast_unum(t_specinfo *info, void *num, va_list *args)
+void	ft_printf_cast_unum(t_specinfo *info, uintmax_t *num, va_list *args)
 {
 	if (info->mod_h > 1)
 		*num = va_arg(*args, unsigned char);

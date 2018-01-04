@@ -59,7 +59,7 @@ void				format_n(t_specinfo *info, int *len, va_list *args);
 void				format_o(t_specinfo *info, int *len, va_list *args);
 
 
-void				ft_printf_cast_unum(t_specinfo *info, void *num, va_list *args);
+void				ft_printf_cast_unum(t_specinfo *info, uintmax_t *num, va_list *args);
 int					ft_chrin_str(const char *s, int c);
 
 #endif
