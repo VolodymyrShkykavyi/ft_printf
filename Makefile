@@ -10,9 +10,9 @@ LIBFT_OFILES = $(addprefix libft/, ft_strstr.o ft_strmap.o ft_lstadd.o ft_strdel
 			ft_strclr.o ft_strncpy.o ft_putchar.o ft_putstr_fd.o ft_toupper.o ft_strmapi.o \
 			ft_strrchr.o ft_str_tolower.o ft_str_toupper.o ft_printarr.o ft_isspace.o ft_lstsize.o \
 			ft_putnchar.o ft_putnstr.o ft_atoi.o ft_putwchar.o ft_putwstr.o ft_utf8_bytelen.o \
-			ft_putnwstr.o ft_wstrsize.o)
-PRINTF_OFILES = format_c.o format_p.o format_s.o ft_chrin_str.o ft_itoa_base.o ft_printf.o print_manager.o \
-			specificator_manager.o
+			ft_putnwstr.o ft_wstrsize.o ft_itoa_base.o)
+PRINTF_OFILES = format_c.o format_p.o format_s.o ft_chrin_str.o ft_printf.o print_manager.o \
+			specificator_manager.o format_d_i.o
 INCLUDES = -I ./includes
 
 all: $(NAME)
@@ -24,7 +24,6 @@ $(NAME): $(LIBFT_OFILES) $(PRINTF_OFILES)
 	@gcc -o $@ -c $< $(FLAGS) $(INCLUDES)
 clean:
 	@rm -f $(LIBFT_OFILES) $(PRINTF_OFILES)
-	rm -rf *.o libft\/*\.o
 	@echo "\033[0;32mCLEANED\033[0m "
 fclean: clean
 	rm -f $(NAME)
@@ -32,4 +31,4 @@ re:
 	@make fclean
 	@make
 run:
-	@make re && gcc main.c -L. -lftprintf && ./a.out | cat -e
+	gcc main.c -L. -lftprintf && ./a.out | cat -e
