@@ -33,6 +33,21 @@ static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
 		*num = (int)(*num);
 }
 
+static void	format_d_i_printnbr(t_specinfo *info, char *str, int num_len)
+{
+	int		zero_len;
+
+	zero_len = num_len - ft_strlen(str);
+	if (num >= 0 && info->plus_space == '+')
+		ft_putchar('+');
+	else if (num >= 0 && info->plus_space == ' ')
+		ft_putchar(' ');
+	else if (num < 0)
+		ft_putchar('-');
+	ft_putnchar('0', (size_t)zero_len);
+	ft_putstr((num < 0) ? str + 1 : str);
+}
+
 void	format_d_i(t_specinfo *info, int *len, va_list *args)
 {
 	intmax_t	num;
@@ -44,19 +59,15 @@ void	format_d_i(t_specinfo *info, int *len, va_list *args)
 	format_d_i_castnum(info, &num);
 	str = (!num && !(info->precision)) ? ft_strnew(0) : ft_itoa_base(num, 10);
 	str_len = ft_strlen(str);
+	str_len = (str_len > info->precision) ? str_len : info->precision;
 	if (num >= 0 && info->plus_space)
 		str_len++;
 	space_len =  (str_len < info->min_width) ? info->min_width - str_len : 0;
 	*len += space_len + str_len;
-	if (num >= 0 && info->plus_space == '+')
-		ft_putchar('+');
-	else if (num >= 0 && info->plus_space == ' ')
-		ft_putchar(' ');
-	else if (num < 0)
-		ft_putchar('-');
 	if (info->zero_minus != '-')
-		ft_putnchar((info->zero_minus == '0') ? '0' : ' ', space_len);
-	ft_putstr((num < 0) ? str + 1 : str);
+		ft_putnchar((info->zero_minus == '0' && info->precision == -1)
+					? '0' : ' ', space_len);
+	format_d_i_printnbr(info, str, str_len);
 	if (info->zero_minus == '-')
 		ft_putnchar(' ', (size_t)space_len);
 	free(str);
