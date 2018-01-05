@@ -12,12 +12,14 @@
 
 #include "libft.h"
 
-char	*ft_str_toupper(char *str)
+void	ft_str_toupper(char **str)
 {
-	char	*start;
+	size_t	i;
 
-	start = str;
-	while(*str)
-		*str = ft_toupper(*str++);
-	return (start);
+	i = 0;
+	while ((*str)[i])
+	{
+		(*str)[i] = ft_toupper((*str)[i]);
+		i++;
+	}
 }

@@ -87,9 +87,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char				*ft_strnew_tolower(char *str);
-char				*ft_str_tolower(char *str);
+void				ft_str_tolower(char **str);
 char				*ft_strnew_toupper(char *str);
-char				*ft_str_toupper(char *str);
+void				ft_str_toupper(char **str);
 void				ft_printarr(char **arr);
 int					ft_isspace(int c);
 int					ft_lstsize(t_list *list);

@@ -29,7 +29,7 @@ int	main()
 	//ft_putwstr(wc);
 	int i = 0;
 
-	printf("__%#08.4x__\n", 2);
+	ft_printf("__%#010.3x__\n", 16);
 	//write(1, &happy, 2);
 	/*res = 0xc2;
 	write(1, &(res), 1);
