@@ -27,7 +27,7 @@ void	format_o(t_specinfo *info, int *len, va_list *args)
 		ft_printf_cast_unum(info, &num, args);
 	str = (!num && !(info->precision)) ? ft_strnew(0) : ft_uitoa_base(num, 8);
 	str_len = ft_strlen(str);
-	if (info->sharp)
+	if (info->sharp && num != 0)
 		str_len++;
 	str_len = (info->precision > str_len) ? info->precision : str_len;
 	space_len = (info->min_width > str_len) ? info->min_width - str_len : 0;
