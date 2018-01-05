@@ -37,7 +37,7 @@ char	*ft_uitoa_base(uintmax_t num, short base)
 		return (NULL);
 	res[len--] = '\0';
 	if (num == 0)
-		res[0] == '0';
+		res[0] = '0';
 	while (num)
 	{
 		res[len--] = HEX_SYMBOLS[num % base];
