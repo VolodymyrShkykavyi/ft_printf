@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_toupper.c                                   :+:      :+:    :+:   */
+/*   format_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vshkykav <vshkykav@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/05 13:34:00 by vshkykav          #+#    #+#             */
-/*   Updated: 2018/01/05 13:34:00 by vshkykav         ###   ########.fr       */
+/*   Created: 2017/12/25 00:21:00 by vshkykav          #+#    #+#             */
+/*   Updated: 2017/12/25 00:21:00 by vshkykav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-char	*ft_str_toupper(char *str)
+void	format_p(t_specinfo *info, int *len, va_list *args)
 {
-	char	*start;
 
-	start = str;
-	while(*str)
-		*str = ft_toupper(*str++);
-	return (start);
 }
