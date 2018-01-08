@@ -32,6 +32,8 @@ void	print_manager(t_specinfo *info, int *len, va_list *args)
 		format_u(info, len, args);
 	else if (info->format == 'b')
 		format_b(info, len, args);
+	else if (info->format == 'm')
+		format_m(info, len);
 	else
 		va_arg(*args, int);
 }

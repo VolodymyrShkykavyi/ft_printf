@@ -43,7 +43,7 @@ void				specificator_manager(char **format, int *len,
 									va_list *args);
 void				print_manager(t_specinfo *info, int *len,
 									va_list *args);
-void				ft_printf_getcolor(char **str);
+void				ft_printf_getcolor(char **str, int *len);
 
 void				format_s(t_specinfo *info, int *len, va_list *args);
 void				format_s_wchar(t_specinfo *info, int *len, va_list *args);
@@ -61,9 +61,11 @@ void				format_x(t_specinfo *info, int *len, va_list *args);
 void				format_u(t_specinfo *info, int *len, va_list *args);
 void				format_f(t_specinfo *info, int *len, va_list *args);
 void				format_b(t_specinfo *info, int *len, va_list *args);
+void				format_m(t_specinfo *info, int *len);
 
 
 void				ft_printf_cast_unum(t_specinfo *info, uintmax_t *num, va_list *args);
 int					ft_chrin_str(const char *s, int c);
+void				format_x_print(t_specinfo *info, char *str, short str_len, short space_len);
 
 #endif

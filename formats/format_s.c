@@ -39,11 +39,11 @@ static int	format_s_wstrchars_inbytes(wchar_t *str, size_t max_bytes)
 static int	format_s_wstr_maxbytes(wchar_t *str, size_t max_bytes)
 {
 	int 	bytes;
-	int 	tmp;
+	size_t 	tmp;
 
 	bytes = 0;
 	tmp = ft_utf8_bytelen(*str);
-	while (*str && tmp <= max_bytes)
+	while (*str && (tmp <= max_bytes))
 	{
 		bytes = tmp;
 		tmp += ft_utf8_bytelen(*str++);

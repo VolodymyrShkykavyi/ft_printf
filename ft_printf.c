@@ -27,8 +27,8 @@ int		ft_printf(const char *format, ...)
 			specificator_manager(&str, &len, &args);
 		if (!(*str))
 			break ;
-		/*if (*str == '{')
-			ft_printf_getcolor(&str);*/
+		if (*str == '{')
+			ft_printf_getcolor(&str, &len);
 		len++;
 		write(1, str, 1);
 		str++;

@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static void format_x_print(t_specinfo *info, char *str, short str_len, short space_len)
+void	format_x_print(t_specinfo *info, char *str, short str_len, short space_len)
 {
 	if (info->zero_minus != '-')
 		ft_putnchar(' ', space_len);

@@ -29,7 +29,7 @@ int	main()
 	//ft_putwstr(wc);
 	int i = 123;
 
-	ft_printf("__%#010b__\n", 312);
+	ft_printf("_{red}_{yellow}%30.20hhp{{blue}bls{cyan}ces{eoc}__\n", &i);
 	//write(1, &happy, 2);
 	/*res = 0xc2;
 	write(1, &(res), 1);

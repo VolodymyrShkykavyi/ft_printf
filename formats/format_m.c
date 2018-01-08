@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format_f.c                                         :+:      :+:    :+:   */
+/*   format_m.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vshkykav <vshkykav@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/08 15:13:00 by vshkykav          #+#    #+#             */
-/*   Updated: 2018/01/08 15:13:00 by vshkykav         ###   ########.fr       */
+/*   Created: 2018/01/08 20:44:00 by vshkykav          #+#    #+#             */
+/*   Updated: 2018/01/08 20:44:00 by vshkykav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
+#include "../includes/libft.h"
+#include <string.h>
+#include <errno.h>
 
-void	format_f(t_specinfo *info, int *len, va_list *args)
+void	format_m(t_specinfo *info, int *len)
 {
-	long double	num;
+	char	*str;
 
-	if (info->mod_L)
-		num = va_arg(*args, long double);
-	else
-		num = va_arg(*args, double);
-	*len += 0;
-	printf("%Lf", num);
+	str = strerror(errno);
+	format_s_putstr(info, len, str);
 }
