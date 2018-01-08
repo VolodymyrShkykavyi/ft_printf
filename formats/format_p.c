@@ -11,8 +11,18 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "libft.h"
 
 void	format_p(t_specinfo *info, int *len, va_list *args)
 {
+	void	*addr;
+	char	*str;
 
+	addr = va_arg(*args,uintmax_t);
+
+	str = ft_uitoa_base(addr, 16);
+	ft_str_tolower(&str);
+	ft_putstr("0x");
+	*len = 2 + ft_strlen(str);
+	ft_putstr(str);
 }

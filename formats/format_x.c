@@ -17,17 +17,13 @@
 static void format_x_print(t_specinfo *info, char *str, short str_len, short space_len)
 {
 	if (info->zero_minus != '-')
-	{
 		ft_putnchar(' ', space_len);
+	if (info->sharp)
+	{
+		ft_putchar('0');
+		ft_putchar((info->format == 'x') ? 'x' : 'X');
 	}
-		if (info->sharp)
-		{
-			ft_putchar('0');
-			ft_putchar((info->format == 'x') ? 'x' : 'X');
-		}
-		ft_putnchar('0', str_len - ft_strlen(str));
-
-
+	ft_putnchar('0', str_len - ft_strlen(str));
 	ft_putstr(str);
 	if (info->zero_minus == '-')
 		ft_putnchar(' ', space_len);
