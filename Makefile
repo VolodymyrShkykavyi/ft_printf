@@ -12,7 +12,7 @@ LIBFT_OFILES = $(addprefix libft/, ft_strstr.o ft_strmap.o ft_lstadd.o ft_strdel
 			ft_putnchar.o ft_putnstr.o ft_atoi.o ft_putwchar.o ft_putwstr.o ft_utf8_bytelen.o \
 			ft_putnwstr.o ft_wstrsize.o ft_itoa_base.o ft_uitoa_base.o ft_str_toupper.o ft_str_tolower.o)
 PRINTF_OFILES = $(addprefix formats/, format_c.o format_p.o format_s.o format_d_i.o format_n.o format_o.o format_x.o \
-			format_u.o) \
+			format_u.o format_b.o format_f.o) \
 			ft_printf.o print_manager.o specificator_manager.o ft_chrin_str.o ft_printf_cast_unum.o
 INCLUDES = -I ./includes
 

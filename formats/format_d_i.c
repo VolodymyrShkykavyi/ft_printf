@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 #include <stdlib.h>
 
 static void	format_d_i_castnum(t_specinfo *info, intmax_t *num)
