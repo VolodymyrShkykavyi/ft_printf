@@ -12,6 +12,7 @@
 
 #include "../includes/ft_printf.h"
 #include "libft.h"
+#include <stdlib.h>
 
 void	format_p(t_specinfo *info, int *len, va_list *args)
 {
@@ -25,4 +26,5 @@ void	format_p(t_specinfo *info, int *len, va_list *args)
 	ft_putstr("0x");
 	*len = 2 + ft_strlen(str);
 	ft_putstr(str);
+	free(str);
 }

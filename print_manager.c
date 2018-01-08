@@ -28,6 +28,8 @@ void	print_manager(t_specinfo *info, int *len, va_list *args)
 		format_x(info, len, args);
 	else if (info->format == 'p')
 		format_p(info, len, args);
+	else if (info->format == 'u' || info->format == 'U')
+		format_u(info, len, args);
 	else
 		va_arg(*args, int);
 }

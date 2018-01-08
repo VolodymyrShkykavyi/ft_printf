@@ -58,6 +58,7 @@ void				format_d_i(t_specinfo *info, int *len, va_list *args);
 void				format_n(t_specinfo *info, int *len, va_list *args);
 void				format_o(t_specinfo *info, int *len, va_list *args);
 void				format_x(t_specinfo *info, int *len, va_list *args);
+void				format_u(t_specinfo *info, int *len, va_list *args);
 
 
 void				ft_printf_cast_unum(t_specinfo *info, uintmax_t *num, va_list *args);
