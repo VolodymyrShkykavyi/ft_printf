@@ -21,7 +21,9 @@ void	format_o(t_specinfo *info, int *len, va_list *args);
 int	main()
 {
 	setlocale(LC_ALL, "en_US.UTF-8");
-
+/**
+*ad
+*/
 	char happy[] = { 0xd8, 0xa8 };  /* U+263A */
 	wchar_t *wc = L"_ঋ_";
 	unsigned int res;
